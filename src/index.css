@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global styles */
+:root {
+  --container-max: 1100px;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-feature-settings: "liga" 1, "calt" 1;
+}
+
+.container-max {
+  max-width: var(--container-max);
+}
+
+.section-padding {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.card {
+  @apply bg-white rounded-xl border border-slate-200 shadow-sm transition-all duration-300 ease-out;
+}
+
+.btn-primary {
+  @apply inline-flex items-center gap-2 rounded-lg bg-indigo-600 text-white px-5 py-3 font-medium shadow hover:bg-indigo-700 active:bg-indigo-800 transition-colors;
+}
+
+.btn-ghost {
+  @apply inline-flex items-center gap-2 rounded-lg bg-transparent text-indigo-600 px-5 py-3 font-medium hover:bg-indigo-50 transition-colors;
+}
+
+/* Polished aesthetics */
+.bg-app-gradient {
+  background-image: radial-gradient(1200px 600px at 80% -10%, rgba(99,102,241,0.12), rgba(99,102,241,0) 60%),
+    radial-gradient(1000px 500px at -10% 10%, rgba(34,211,238,0.12), rgba(34,211,238,0) 60%);
+}
+
+.hero-glow {
+  background: radial-gradient(closest-side, rgba(99,102,241,0.25), rgba(99,102,241,0));
+  filter: blur(40px);
+}
+
+.hover-lift {
+  @apply hover:-translate-y-1 hover:shadow-lg;
+  transition: transform 250ms ease, box-shadow 250ms ease;
+}
+
+.link-underline {
+  position: relative;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 0;
+  background: theme(colors.indigo.600);
+  transition: width 220ms ease;
+}
+.link-underline:hover::after {
+  width: 100%;
+}
+
+.section-title {
+  @apply text-2xl font-semibold text-slate-900 mb-6;
+}
+
+
+
